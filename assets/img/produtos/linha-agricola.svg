@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Trator">
+  <rect width="400" height="300" fill="#edeef0"/>
+  <ellipse cx="205" cy="262" rx="150" ry="9" fill="#d3d4d8"/>
+  <!-- chassi / capô -->
+  <path d="M175 168h150a10 10 0 0 1 10 10v22H175z" fill="#1a1b1f"/>
+  <path d="M205 118h112a14 14 0 0 1 14 14v38H205z" fill="#e10707"/>
+  <path d="M205 118h112a14 14 0 0 1 14 14v6H205z" fill="#b90505"/>
+  <!-- grade frontal -->
+  <rect x="325" y="132" width="10" height="38" rx="3" fill="#1a1b1f"/>
+  <g stroke="#b90505" stroke-width="3" stroke-linecap="round"><path d="M225 140h80M225 150h80M225 160h80"/></g>
+  <!-- escapamento -->
+  <rect x="283" y="78" width="9" height="42" fill="#1a1b1f"/>
+  <rect x="279" y="72" width="17" height="8" rx="3" fill="#33353c"/>
+  <!-- cabine -->
+  <path d="M82 70h96a8 8 0 0 1 8 8v92H82z" fill="#1a1b1f"/>
+  <path d="M96 84h72a4 4 0 0 1 4 4v70H96z" fill="#b8bec7"/>
+  <path d="M96 84h72l-30 74H96z" fill="#d7dbe1" opacity=".7"/>
+  <rect x="76" y="62" width="112" height="12" rx="4" fill="#33353c"/>
+  <!-- roda traseira -->
+  <circle cx="132" cy="196" r="66" fill="#1a1b1f"/>
+  <g stroke="#33353c" stroke-width="5" stroke-linecap="round">
+    <path d="M132 134v12M132 246v12M70 196h12M182 196h12M88 152l9 9M167 231l9 9M176 152l-9 9M97 231l-9 9"/>
+  </g>
+  <circle cx="132" cy="196" r="38" fill="#e10707"/>
+  <circle cx="132" cy="196" r="38" fill="none" stroke="#b90505" stroke-width="3"/>
+  <circle cx="132" cy="196" r="14" fill="#1a1b1f"/>
+  <circle cx="132" cy="196" r="5" fill="#8b8f96"/>
+  <!-- roda dianteira -->
+  <circle cx="300" cy="224" r="38" fill="#1a1b1f"/>
+  <g stroke="#33353c" stroke-width="4" stroke-linecap="round">
+    <path d="M300 190v7M300 251v7M266 224h7M327 224h7M276 200l5 5M319 243l5 5M324 200l-5 5M281 243l-5 5"/>
+  </g>
+  <circle cx="300" cy="224" r="22" fill="#e10707"/>
+  <circle cx="300" cy="224" r="8" fill="#1a1b1f"/>
+  <circle cx="300" cy="224" r="3" fill="#8b8f96"/>
+</svg>
