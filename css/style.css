@@ -646,9 +646,8 @@ textarea:focus-visible {
   display: flex; align-items: center; justify-content: center;
   flex-shrink: 0;
   color: var(--red);
-  font-family: var(--font-mono);
-  font-weight: 600;
 }
+.contact-info-item .ico svg { width: 20px; height: 20px; }
 .contact-info-item strong { display: block; font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--slate); margin-bottom: 2px; }
 .contact-info-item a, .contact-info-item span { font-size: 15.5px; }
 
