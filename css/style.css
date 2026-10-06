@@ -185,8 +185,10 @@ textarea:focus-visible {
    Top bar (faixa técnica de contato)
    ========================================================================== */
 .topbar {
-  background: var(--graphite);
-  color: #b8bac0;
+  /* versão clara: para voltar à faixa escura, use background: var(--graphite) e color: #b8bac0 */
+  background: #f4f5f6;
+  color: var(--slate);
+  border-bottom: 1px solid #e4e5e8;
   font-family: var(--font-mono);
   font-size: 12.5px;
 }
@@ -199,8 +201,9 @@ textarea:focus-visible {
   gap: 16px;
   flex-wrap: wrap;
 }
-.topbar a { color: #e7e8ea; }
-.topbar a:hover { color: var(--ember); }
+.topbar a { color: var(--ink); }
+.topbar a:hover { color: var(--red); }
+@media (max-width: 560px) { .topbar-sep { display: none; } }  /* no celular o WhatsApp vai para a 2ª linha, sem a barra sobrando */
 .topbar-links { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; align-items: center; }
 
 /* ==========================================================================
@@ -278,19 +281,25 @@ textarea:focus-visible {
 @media (max-width: 900px) {
   .nav-toggle { display: block; }
   .main-nav {
-    position: fixed;
-    inset: 68px 0 0 0;
+    position: absolute;               /* abre logo abaixo do cabeçalho (o botão ☰ continua visível) */
+    top: 100%; left: 0; right: 0;
+    max-height: calc(100vh - 80px);
     background: var(--white);
-    transform: translateY(-110%);
-    transition: transform 0.28s ease;
+    transform: translateY(-12px);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.2s ease, opacity 0.2s ease, visibility 0s linear 0.2s;
     overflow-y: auto;
     border-top: 1px solid #e4e5e8;
+    border-bottom: 1px solid #e4e5e8;
+    box-shadow: 0 18px 30px -12px rgba(0,0,0,0.18);
   }
-  .main-nav.open { transform: translateY(0); }
+  .main-nav.open { transform: translateY(0); opacity: 1; visibility: visible; transition: transform 0.2s ease, opacity 0.2s ease, visibility 0s; }
   .main-nav ul { flex-direction: column; align-items: stretch; padding: 12px 24px 32px; gap: 0; }
-  .main-nav a { padding: 16px 4px; border-bottom: 1px solid #eee; border-radius: 0; }
+  .main-nav a { display: block; padding: 16px 4px; border-bottom: 1px solid #eee; border-radius: 0; }
   .main-nav .btn-catalogo { margin: 12px 0 0; text-align: center; }
-  .topbar .container { justify-content: center; text-align: center; }
+  .topbar .container { justify-content: center; text-align: center; padding-top: 6px; padding-bottom: 6px; }
+  .topbar { font-size: 12px; }
 }
 
 /* ==========================================================================
@@ -469,6 +478,7 @@ textarea:focus-visible {
 }
 .value-card h3 { font-size: 17px; margin: 10px 0 8px; }
 .value-card p { font-size: 14.5px; margin: 0; }
+@media (min-width: 901px) { .value-grid.cols-3 { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 900px) { .value-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 560px) { .value-grid { grid-template-columns: 1fr; } }
 
