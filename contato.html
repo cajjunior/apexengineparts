@@ -69,8 +69,13 @@
           <label for="mensagem">Mensagem</label>
           <textarea id="mensagem" name="mensagem" required></textarea>
         </div>
+        <label class="form-check">
+          <input type="checkbox" id="novidades" name="novidades">
+          <span>Quero receber novidades e promoções da Apex por e-mail ou telefone (opcional).</span>
+        </label>
         <button type="submit" class="btn btn-primary">Enviar mensagem</button>
         <p class="form-note">Ao enviar, seu aplicativo de e-mail padrão vai abrir com a mensagem pronta para você confirmar o envio para apex@apexengine.com.br.</p>
+        <p class="form-note">Usamos seus dados para responder ao seu contato. Saiba mais na <a href="politica-de-privacidade.html">Política de Privacidade</a>.</p>
       </form>
     </div>
 
@@ -108,8 +113,12 @@
         </div>
       </div>
 
-      <div class="contact-map">
-        <iframe src="https://maps.google.com/maps?q=Estrada%20Rosa%20Scarpa%2C%20206%2C%20Votuparim%20Santana%20de%20Parna%C3%ADba&t=m&z=13&output=embed&iwloc=near" title="Localização Apex Engine Parts" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <div class="contact-map" id="contact-map">
+        <div class="map-placeholder">
+          <p>O mapa é fornecido pelo Google e só é carregado se você permitir. Ao carregar, o Google pode tratar seu endereço IP e definir cookies.</p>
+          <button type="button" class="btn btn-outline" id="load-map" data-src="https://maps.google.com/maps?q=Estrada%20Rosa%20Scarpa%2C%20206%2C%20Votuparim%20Santana%20de%20Parna%C3%ADba&t=m&z=13&output=embed&iwloc=near">Carregar mapa</button>
+          <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=Estrada+Rosa+Scarpa%2C+206%2C+Santana+de+Parna%C3%ADba" target="_blank" rel="noopener">Abrir no Google Maps</a>
+        </div>
       </div>
     </div>
 
@@ -175,14 +184,29 @@
       var email = document.getElementById('email').value;
       var telefone = document.getElementById('telefone').value;
       var mensagem = document.getElementById('mensagem').value;
+      var novidades = document.getElementById('novidades').checked ? 'Sim' : 'Não';
       var subject = encodeURIComponent('Contato pelo site - ' + nome);
       var body = encodeURIComponent(
         'Nome: ' + nome + '\n' +
         'E-mail: ' + email + '\n' +
-        'Telefone: ' + telefone + '\n\n' +
+        'Telefone: ' + telefone + '\n' +
+        'Aceita receber novidades e promoções: ' + novidades + '\n\n' +
         mensagem
       );
       window.location.href = 'mailto:apex@apexengine.com.br?subject=' + subject + '&body=' + body;
+    });
+  }
+
+  var mapBtn = document.getElementById('load-map');
+  if (mapBtn) {
+    mapBtn.addEventListener('click', function () {
+      var box = document.getElementById('contact-map');
+      var iframe = document.createElement('iframe');
+      iframe.src = mapBtn.getAttribute('data-src');
+      iframe.title = 'Localização Apex Engine Parts';
+      iframe.referrerPolicy = 'no-referrer-when-downgrade';
+      box.innerHTML = '';
+      box.appendChild(iframe);
     });
   }
 </script>
