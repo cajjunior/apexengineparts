@@ -41,11 +41,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function goTo(index) {
       slides[current].classList.remove('active');
+      slides[current].setAttribute('aria-hidden', 'true');
       dots[current].classList.remove('active');
       current = index;
       slides[current].classList.add('active');
+      slides[current].removeAttribute('aria-hidden');
       dots[current].classList.add('active');
     }
+    slides.forEach(function (s, i) { if (i !== 0) s.setAttribute('aria-hidden', 'true'); });
 
     function next() {
       goTo((current + 1) % slides.length);
