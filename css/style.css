@@ -192,7 +192,7 @@ textarea:focus-visible {
 }
 .topbar .container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding-top: 8px;
   padding-bottom: 8px;
@@ -201,7 +201,7 @@ textarea:focus-visible {
 }
 .topbar a { color: #e7e8ea; }
 .topbar a:hover { color: var(--ember); }
-.topbar-links { display: flex; gap: 22px; flex-wrap: wrap; }
+.topbar-links { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; align-items: center; }
 
 /* ==========================================================================
    Header / navegação
