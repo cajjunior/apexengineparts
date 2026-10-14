@@ -699,10 +699,10 @@ textarea:focus-visible {
    Rodapé
    ========================================================================== */
 .site-footer { background: var(--graphite); color: #b8bac0; }
-.footer-top { padding: 64px 0 40px; }
+.footer-top { padding-top: 64px; padding-bottom: 40px; }
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.4fr 0.9fr 0.9fr 1.1fr;
+  grid-template-columns: 1.2fr 0.9fr 0.9fr 1.5fr;
   gap: 40px;
 }
 @media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
@@ -734,8 +734,10 @@ textarea:focus-visible {
 .footer-col a:hover { color: var(--ember); }
 
 .footer-bottom {
-  border-top: 1px solid var(--steel-line);
-  padding: 20px 0;
+  /* linha divisória alinhada ao conteúdo (respeita o padding lateral do .container) */
+  background: linear-gradient(var(--steel-line), var(--steel-line)) center top / calc(100% - 48px) 1px no-repeat;
+  padding-top: 20px;
+  padding-bottom: 20px;
   font-size: 13px;
   color: #85878e;
   display: flex;
