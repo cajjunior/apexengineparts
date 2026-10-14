@@ -185,24 +185,26 @@ textarea:focus-visible {
    Top bar (faixa técnica de contato)
    ========================================================================== */
 .topbar {
-  /* versão clara: para voltar à faixa escura, use background: var(--graphite) e color: #b8bac0 */
-  background: #f4f5f6;
-  color: var(--slate);
-  border-bottom: 1px solid #e4e5e8;
+  /* versão suave: quase branca, texto discreto. Para voltar ao cinza anterior: background #f4f5f6 e border-bottom #e4e5e8 */
+  background: #fbfbfc;
+  color: #8a8e96;
+  border-bottom: 1px solid #f0f1f3;
   font-family: var(--font-mono);
-  font-size: 12.5px;
+  font-size: 12px;
+  letter-spacing: 0.02em;
 }
 .topbar .container {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 8px;
-  padding-bottom: 8px;
+  padding-top: 7px;
+  padding-bottom: 7px;
   gap: 16px;
   flex-wrap: wrap;
 }
-.topbar a { color: var(--ink); }
+.topbar a { color: #4a4d55; transition: color 0.15s ease; }
 .topbar a:hover { color: var(--red); }
+.topbar-sep { color: #c9ccd2; }
 @media (max-width: 700px) { .topbar { display: none; } }   /* celular: sem a barra de telefones (o WhatsApp flutuante e o rodapé têm os contatos) */
 @media (max-width: 560px) { .topbar-sep { display: none; } }  /* no celular o WhatsApp vai para a 2ª linha, sem a barra sobrando */
 .topbar-links { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; align-items: center; }
