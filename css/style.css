@@ -96,7 +96,7 @@ h1, h2, h3, h4 {
   font-family: var(--font-display);
   text-transform: uppercase;
   letter-spacing: 0.02em;
-  line-height: 1.15;
+  line-height: 1.25;
   margin: 0 0 0.5em;
   color: var(--ink);
 }
@@ -262,7 +262,12 @@ textarea:focus-visible {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 8px;
+  padding: 0;
+  width: 44px;
+  height: 44px;
+  display: none;
+  align-items: center;
+  justify-content: center;
 }
 .nav-toggle span,
 .nav-toggle span::before,
@@ -279,7 +284,7 @@ textarea:focus-visible {
 .nav-toggle span::after { position: absolute; top: 7px; }
 
 @media (max-width: 900px) {
-  .nav-toggle { display: block; }
+  .nav-toggle { display: flex; }
   .main-nav {
     position: absolute;               /* abre logo abaixo do cabeçalho (o botão ☰ continua visível) */
     top: 100%; left: 0; right: 0;
@@ -352,6 +357,8 @@ textarea:focus-visible {
   cursor: pointer;
   padding: 0;
 }
+.hero-dots button { position: relative; }
+.hero-dots button::after { content: ''; position: absolute; inset: -14px -3px; }   /* amplia a área de toque */
 .hero-dots button.active { background: var(--ember); }
 
 /* ---- Faixa de apresentação (abaixo do banner) ---- */
@@ -481,7 +488,7 @@ textarea:focus-visible {
 .value-card h3 { font-size: 17px; margin: 10px 0 8px; }
 .value-card p { font-size: 14.5px; margin: 0; }
 @media (min-width: 901px) { .value-grid.cols-3 { grid-template-columns: repeat(3, 1fr); } }
-@media (max-width: 900px) { .value-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 900px) { .value-grid { grid-template-columns: 1fr 1fr; } .value-grid.cols-3 > :last-child:nth-child(odd) { grid-column: 1 / -1; } }
 @media (max-width: 560px) { .value-grid { grid-template-columns: 1fr; } }
 
 /* ==========================================================================
@@ -495,7 +502,13 @@ textarea:focus-visible {
 }
 @media (max-width: 980px) { .product-grid { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 700px) { .product-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 460px) { .product-grid { grid-template-columns: 1fr; } }
+@media (max-width: 460px) {
+  .product-grid { column-gap: 12px; row-gap: 14px; }
+  .product-card { padding: 10px; }
+  .product-card h3 { font-size: 14px; gap: 6px; }
+}
+@media (max-width: 340px) { .product-grid { grid-template-columns: 1fr; } }
+@media (max-width: 980px) and (min-width: 701px) { .product-grid.cols-4 { grid-template-columns: repeat(2, 1fr); } }
 
 .product-card {
   display: block;
@@ -827,4 +840,11 @@ textarea:focus-visible {
 .cookie-actions .btn:hover { background: var(--white); color: var(--graphite); }
 @media (max-width: 480px) {
   .cookie-banner { left: 12px; bottom: 12px; width: calc(100vw - 24px); }
+}
+
+
+/* Acessibilidade em telas de toque: áreas clicáveis maiores (sem mudar o visual) */
+@media (hover: none), (max-width: 900px) {
+  .topbar a, .footer-col a, .footer-bottom a, .contact-info-item a { padding: 10px 4px; margin: -10px -4px; }
+  .form-field input, .form-field textarea { font-size: 16px; }   /* evita o zoom automático do iPhone ao digitar */
 }
