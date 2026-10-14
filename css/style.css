@@ -848,3 +848,13 @@ textarea:focus-visible {
   .topbar a, .footer-col a, .footer-bottom a, .contact-info-item a { padding: 10px 4px; margin: -10px -4px; }
   .form-field input, .form-field textarea { font-size: 16px; }   /* evita o zoom automático do iPhone ao digitar */
 }
+
+/* Contatos dentro do menu do celular (a barra superior fica oculta até 700px) */
+.nav-contacts { display: none; }
+@media (max-width: 700px) {
+  .nav-contacts { display: block; margin-top: 18px; padding-top: 6px; }
+  .main-nav .nav-contacts-title { display: block; font-family: var(--font-mono); font-size: 11.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--slate); padding: 8px 4px 4px; }
+  .main-nav .nav-contacts a { display: flex; align-items: center; gap: 12px; padding: 14px 4px; border-bottom: 1px solid #eee; font-family: var(--font-mono); font-size: 14.5px; text-transform: none; letter-spacing: 0; color: var(--ink); }
+  .main-nav .nav-contacts a:last-child { border-bottom: 0; }
+  .main-nav .nav-contacts svg { width: 20px; height: 20px; flex: none; fill: var(--red); }
+}
