@@ -206,7 +206,9 @@ textarea:focus-visible {
 .topbar a:hover { color: var(--red); }
 .topbar-sep { color: #c9ccd2; }
 .topbar-wa { display: inline-flex; align-items: center; gap: 6px; }
-.topbar-wa svg { width: 14px; height: 14px; fill: #25d366; flex: none; }
+.topbar-wa, .topbar-tel { display: inline-flex; align-items: center; gap: 6px; }
+.topbar-wa svg, .topbar-tel svg { width: 14px; height: 14px; fill: #4a4d55; flex: none; transition: fill 0.15s ease; }
+.topbar-wa:hover svg, .topbar-tel:hover svg { fill: var(--red); }
 @media (max-width: 700px) { .topbar { display: none; } }   /* celular: sem a barra de telefones (o WhatsApp flutuante e o rodapé têm os contatos) */
 @media (max-width: 560px) { .topbar-sep { display: none; } }  /* no celular o WhatsApp vai para a 2ª linha, sem a barra sobrando */
 .topbar-links { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; align-items: center; }
