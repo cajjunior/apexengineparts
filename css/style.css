@@ -314,13 +314,13 @@ textarea:focus-visible {
    própria imagem). O título e os botões ficam na faixa .hero-intro, abaixo.
    Para deixar o banner mais alto/baixo, mude --hero-max-h.
    ========================================================================== */
-.hero { --hero-max-h: 800px; }   /* em telas acima de 2560px o banner para de crescer */
+.hero { --hero-max-h: 720px; }   /* em telas acima de 2560px o banner para de crescer */
 
 .hero-stage {
   position: relative;
   background: #1a1b1f;
   width: 100%;
-  height: min(31.25vw, var(--hero-max-h));   /* 31.25vw = proporção 1920x600 (computador/tablet) */
+  height: min(27.5vw, var(--hero-max-h));   /* banner 1920x600 (31.25vw seria inteiro); 27.5vw corta ~12% da altura, igual em cima e embaixo */
   overflow: hidden;
 }
 .hero-slide {
@@ -354,7 +354,8 @@ textarea:focus-visible {
 .hero-dots button.active { background: var(--red); }
 /* celular: banner 4:3 (800x600) e a parte de baixo é clara, então os pontos ficam escuros */
 @media (max-width: 700px) {
-  .hero-stage { height: min(75vw, var(--hero-max-h)); }
+  .hero-stage { height: min(66vw, var(--hero-max-h)); }   /* banner 800x600 (75vw seria inteiro); corta só a parte de baixo */
+  .hero-slide img { object-position: center top; }
   .hero-dots { left: 6vw; bottom: 10px; gap: 8px; }
   .hero-dots button { background: rgba(26,27,31,0.35); }
   .hero-dots button.active { background: var(--red); }
