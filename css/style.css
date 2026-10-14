@@ -313,7 +313,7 @@ textarea:focus-visible {
    própria imagem). O título e os botões ficam na faixa .hero-intro, abaixo.
    Para deixar o banner mais alto/baixo, mude --hero-max-h.
    ========================================================================== */
-.hero { --hero-max-h: 600px; }
+.hero { --hero-max-h: 800px; }   /* em telas acima de 2560px o banner para de crescer */
 
 .hero-stage {
   position: relative;
