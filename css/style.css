@@ -864,3 +864,11 @@ textarea:focus-visible {
   .main-nav .nav-contacts a:last-child { border-bottom: 0; }
   .main-nav .nav-contacts svg { width: 20px; height: 20px; flex: none; fill: var(--red); }
 }
+
+/* Telefones na seção "Fale com a Apex" (discreto) */
+.contact-lines{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px 28px;margin:0 0 28px}
+.contact-lines a{display:inline-flex;align-items:center;gap:8px;font-family:'Oswald',sans-serif;font-weight:500;font-size:18px;letter-spacing:.02em;color:var(--slate);text-decoration:none;transition:color .2s}
+.contact-lines a svg{width:18px;height:18px;fill:#4a4d55;flex:none;transition:fill .2s}
+.contact-lines a:hover{color:var(--red)}
+.contact-lines a:hover svg{fill:var(--red)}
+@media (max-width:520px){.contact-lines{flex-direction:column;gap:10px}}
