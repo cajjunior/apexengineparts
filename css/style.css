@@ -872,3 +872,9 @@ textarea:focus-visible {
 .contact-lines a:hover{color:var(--red)}
 .contact-lines a:hover svg{fill:var(--red)}
 @media (max-width:520px){.contact-lines{flex-direction:column;gap:10px}}
+
+/* Crédito discreto da agência no rodapé */
+.dev-credit{display:inline-flex;align-items:center;gap:8px;opacity:.8;transition:opacity .2s}
+.dev-credit:hover{opacity:1}
+.dev-credit a{display:inline-flex;align-items:center}
+.dev-credit img{height:26px;width:auto;display:block}
