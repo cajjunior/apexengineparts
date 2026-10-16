@@ -878,3 +878,4 @@ textarea:focus-visible {
 .dev-credit:hover{opacity:1}
 .dev-credit a{display:inline-flex;align-items:center}
 .dev-credit img{height:26px;width:auto;display:block}
+@media (min-width:701px){.footer-bottom-links{order:-1}}
